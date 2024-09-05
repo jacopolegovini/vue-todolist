@@ -49,6 +49,12 @@ createApp({
         this.toDo.push(newObjectInput);
         this.inputToDo = '';
         console.log(this.toDo)
+      },
+
+      taskCompleted(index) {
+        if (this.toDo[index]['done']) return this.toDo[index].done = false;
+        this.toDo[index].done = true;
+        console.log(this.toDo[index] )
       }
     }
   }).mount('#app')
