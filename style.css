@@ -16,6 +16,9 @@
 }
 
 .ticked {
+    border: 6px solid green;
+}
+
+.ticked-trash {
     border: 1px solid green;
-    background-color: green;
 }
