@@ -1,11 +1,21 @@
+/* General */
+h2 {
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+/* Undone task */
+
 .line-through {
     text-decoration: line-through;
 }
 
 .trash {
     border: 1px solid gray;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
 }
 
 .tick {
@@ -21,4 +31,21 @@
 
 .ticked-trash {
     border: 1px solid green;
+    color: white;
+    background-color: red;
+}
+
+
+/* Done Task */
+
+.content-done-task {
+    opacity: 0.5;
+}
+
+.element-content-done-task {
+    display: block;
+}
+
+.none-element-content-done-task {
+    display: none;
 }
