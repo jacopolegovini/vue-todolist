@@ -22,20 +22,21 @@
 </head>
 <body>
     <div id="app">
-        <header>
+        <header class="container w-50">
             <h1 class="text-center my-3">
                 To Do List
             </h1>
         </header>
-        <main class="container">
-            <div class="undone-task">
+        
+        <main class="container d-flex flex-column align-items-center">
+            <div class="undone-task card">
                 <div class="title-undone-task">
                     <h2>
                         Task da completare
                     </h2>
                 </div>
                 <div class="content-undone-task d-flex flex-column align-items-center">
-                    <ul class="list-group list-group-flush w-50">
+                    <ul class="list-group list-group-flush w-75">
                         <li class="list-group-item d-flex justify-content-between" v-for="(element, index) in toDo">
                             <div :class="element.done === true ? 'line-through' : ''" @click="taskCompleted(index)" class="d-flex">
                                 <div class="tick" :class="element.done === true ? 'ticked' : ''"></div>
@@ -47,23 +48,25 @@
                         </li>
                     </ul>
                    
-                    <div class="input-group mb-3 mt-3 w-50">
+                    <div class="input-group mb-3 mt-3 w-75">
                         <input type="text" class="form-control" placeholder="Nuovo task" aria-label="Recipient's username" aria-describedby="button-addon2" v-model="inputToDo" @keyup.enter="addToDo(inputToDo)">
                         <button class="btn btn-outline-primary" type="Aggiungi" id="button-addon2" @click="addToDo(inputToDo)">Aggiungi</button>
                     </div>
                 </div>
             </div>
-            <div class="done-task mt-3">
+            <div class="done-task mt-3 card pb-3">
                 <div class="title-done-task">
                     <h2>
                         Task completati
                     </h2>
                 </div>
                 <div class="content-done-task d-flex justify-content-center">
-                    <ul class="list-group list-group-flush w-50">
+                    <ul class="list-group list-group-flush w-75">
                         <li class="list-group-item justify-content-between" v-for="(element, index) in toDo" :class="element.done === true ? 'element-content-done-task d-flex' : 'none-element-content-done-task'">
-                            <div class="tick" :class="element.done === true ? 'ticked' : ''"></div>
-                            <div>{{element.text}}</div>
+                            <div class="d-flex">
+                                <div class="tick" :class="element.done === true ? 'ticked' : ''"></div>
+                                <div class="ms-2">{{element.text}}</div>
+                            </div>
                             <div class="trash d-flex justify-content-center align-items-center" :class="element.done === true ? 'ticked-trash' : ''" @click="removeToDo(index)">
                                 <i class="fa-solid fa-trash"></i>
                             </div>

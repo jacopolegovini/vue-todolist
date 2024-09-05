@@ -1,7 +1,16 @@
 /* General */
+h1 {
+    border-bottom: 1px solid gray;
+    padding-bottom: 15px;
+}
+
 h2 {
     text-align: center;
     padding: 20px 0;
+}
+
+.card {
+    width: 50%;
 }
 
 
@@ -25,6 +34,10 @@ h2 {
     height: 25px;
 }
 
+.tick:hover {
+    scale: 1.2;
+}
+
 .ticked {
     border: 6px solid green;
 }
@@ -35,11 +48,19 @@ h2 {
     background-color: red;
 }
 
+.trash:hover {
+    scale: 1.2;
+}
+
 
 /* Done Task */
 
 .content-done-task {
     opacity: 0.5;
+}
+
+.content-done-task:hover {
+    opacity: 1;
 }
 
 .element-content-done-task {
