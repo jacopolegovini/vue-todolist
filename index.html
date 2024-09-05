@@ -30,8 +30,9 @@
         <main class="container">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item d-flex justify-content-between" v-for="(element, index) in toDo">
-                    <div :class="element.done === true ? 'line-through' : ''" @click="taskCompleted(index)">
-                        {{element.text}}
+                    <div :class="element.done === true ? 'line-through' : ''" @click="taskCompleted(index)" class="d-flex">
+                        <div class="tick d-flex justify-content-center align-items-center" :class="element.done === true ? 'ticked' : ''"></div>
+                        <div class="ms-2">{{element.text}}</div>
                     </div>
                     <div class="trash d-flex justify-content-center align-items-center" @click="removeToDo(index)">
                         <i class="fa-solid fa-trash"></i>

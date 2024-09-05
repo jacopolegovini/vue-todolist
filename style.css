@@ -7,3 +7,15 @@
     width: 25px;
     height: 25px;
 }
+
+.tick {
+    border: 1px solid gray;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
+
+.ticked {
+    border: 1px solid green;
+    background-color: green;
+}

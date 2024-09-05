@@ -3,10 +3,6 @@ const {createApp} = Vue;
 createApp({
     data() {
       return {
-        // newObjectInput: {
-        //   text: '',
-        //   done: false
-        // },
         toDo: [
           {
             text: 'Comprare il pane',
@@ -54,6 +50,7 @@ createApp({
       taskCompleted(index) {
         if (this.toDo[index]['done']) return this.toDo[index].done = false;
         this.toDo[index].done = true;
+
         console.log(this.toDo[index] )
       }
     }
