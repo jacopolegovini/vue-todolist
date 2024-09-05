@@ -3,10 +3,10 @@ const {createApp} = Vue;
 createApp({
     data() {
       return {
-        newObjectInput: {
-          text: '',
-          done: false
-        },
+        // newObjectInput: {
+        //   text: '',
+        //   done: false
+        // },
         toDo: [
           {
             text: 'Comprare il pane',
@@ -41,10 +41,12 @@ createApp({
         console.log(index)
       },
 
-      addToDo(inputToDo) {
-        // this.toDo.push(this.toDo.text['inputToDo'])
-        this.newObjectInput.text = inputToDo;
-        this.toDo.push(this.newObjectInput);
+      addToDo(content) {
+        const newObjectInput = {
+          text: content,
+          done: false
+        };
+        this.toDo.push(newObjectInput);
         this.inputToDo = '';
         console.log(this.toDo)
       }

@@ -39,7 +39,7 @@
                 </li>
             </ul>
             <div class="input-group mb-3 mt-3">
-                <input type="text" class="form-control" placeholder="Nuovo task" aria-label="Recipient's username" aria-describedby="button-addon2" v-model="inputToDo">
+                <input type="text" class="form-control" placeholder="Nuovo task" aria-label="Recipient's username" aria-describedby="button-addon2" v-model="inputToDo" @keyup.enter="addToDo(inputToDo)">
                 <button class="btn btn-outline-primary" type="Aggiungi" id="button-addon2" @click="addToDo(inputToDo)">Button</button>
             </div>
         </main>
