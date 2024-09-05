@@ -1,3 +1,9 @@
 .line-through {
     text-decoration: line-through;
 }
+
+.trash {
+    border: 1px solid gray;
+    width: 25px;
+    height: 25px;
+}
