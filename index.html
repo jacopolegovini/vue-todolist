@@ -32,18 +32,20 @@
             <div class="undone-task card">
                 <div class="title-undone-task">
                     <h2>
-                        Task da completare
+                        Task da completare ({{toDo.length - counter}})
                     </h2>
                 </div>
                 <div class="content-undone-task d-flex flex-column align-items-center">
                     <ul class="list-group list-group-flush w-75">
-                        <li class="list-group-item d-flex justify-content-between" v-for="(element, index) in toDo">
-                            <div :class="element.done === true ? 'line-through' : ''" @click="taskCompleted(index)" class="d-flex">
-                                <div class="tick" :class="element.done === true ? 'ticked' : ''"></div>
-                                <div class="ms-2">{{element.text}}</div>
-                            </div>
-                            <div class="trash d-flex justify-content-center align-items-center" :class="element.done === true ? 'ticked-trash' : ''" @click="removeToDo(index)">
-                                <i class="fa-solid fa-trash"></i>
+                        <li class="list-group-item " v-for="(element, index) in toDo">
+                            <div class="d-flex justify-content-between" @click="increaseCounter(index)">
+                                <div :class="element.done === true ? 'line-through' : ''" @click="taskCompleted(index)" class="d-flex">
+                                    <div class="tick" :class="element.done === true ? 'ticked' : ''"></div>
+                                    <div class="ms-2">{{element.text}}</div>
+                                </div>
+                                <div class="trash d-flex justify-content-center align-items-center" :class="element.done === true ? 'ticked-trash' : ''" @click="removeToDo(index)">
+                                    <i class="fa-solid fa-trash"></i>
+                                </div>
                             </div>
                         </li>
                     </ul>
@@ -61,17 +63,18 @@
                     </h2>
                 </div>
                 <div class="content-done-task d-flex justify-content-center">
-                    <ul class="list-group list-group-flush w-75">
+                    <ul v-show="counter > 0" class="list-group list-group-flush w-75">
                         <li class="list-group-item justify-content-between" v-for="(element, index) in toDo" :class="element.done === true ? 'element-content-done-task d-flex' : 'none-element-content-done-task'">
-                            <div class="d-flex">
-                                <div class="tick" :class="element.done === true ? 'ticked' : ''"></div>
-                                <div class="ms-2">{{element.text}}</div>
+                            <div class="d-flex" @click="increaseCounter(index)">
+                                <div class="tick" :class="element.done === true ? 'ticked' : ''" @click="taskCompleted(index)"></div>
+                                <div class="ms-2" @click="taskCompleted(index)">{{element.text}}</div>
                             </div>
                             <div class="trash d-flex justify-content-center align-items-center" :class="element.done === true ? 'ticked-trash' : ''" @click="removeToDo(index)">
                                 <i class="fa-solid fa-trash"></i>
                             </div>
                         </li>
                     </ul>
+                    <div class="mb-2" v-show="counter === 0">Non ci sono task completati</div>
                 </div>
             </div>
         </main>

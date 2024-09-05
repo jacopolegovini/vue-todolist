@@ -3,6 +3,7 @@ const {createApp} = Vue;
 createApp({
     data() {
       return {
+        counter: 0,
         toDo: [
           {
             text: 'Comprare il pane',
@@ -14,7 +15,7 @@ createApp({
           },
           {
             text: 'Ritornare il pacco',
-            done: true
+            done: false
           },
           {
             text: 'Giocare alla play',
@@ -52,6 +53,11 @@ createApp({
         this.toDo[index].done = true;
 
         console.log(this.toDo[index] )
-      }
+      },
+
+      increaseCounter(index){
+        if (this.toDo[index]['done']) return this.counter++
+        this.counter--
+      },
     }
   }).mount('#app')
